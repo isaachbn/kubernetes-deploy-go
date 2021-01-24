@@ -48,10 +48,12 @@ metadata:
   #namespace: go
   name: go-ingress
   annotations:
-    allow.http: "false"
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: default
 spec:
   rules:
-  - host: go.rancher.dev-ops-ninja.com
+  - host: example-go.uready.app
     http:
       paths:
         - path: /
